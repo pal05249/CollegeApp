@@ -1,0 +1,24 @@
+mat-card {
+  width: 30%;
+  margin: 20px auto;
+}
+
+.formContainer {
+  width: 100%;
+  padding: 20px;
+}
+
+mat-form-field {
+  width: 70%;
+
+}
+
+mat-card-title.logintitle {
+  font-size: medium;
+}
+
+p {
+  padding-top: 0px;
+  margin-top: 30px;
+  font-size: small;
+}

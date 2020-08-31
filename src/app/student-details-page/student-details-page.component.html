@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Back2School</title>
+</head>
+
+<body>
+
+  <h1>Registration Form</h1>
+  <div class="form">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+
+
+      <div class="formContainer">
+
+
+
+        <h3>Student Details</h3>
+
+        <div class="formElement">
+
+          <mat-form-field appearance='legacy'>
+            <mat-label>Full name of Student</mat-label>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+
+          <mat-form-field appearance='legacy'>
+            <mat-label>Combination applied for</mat-label>
+            <input matInput type="text" id="combination" formControlName="password" class="formControl" required />
+          </mat-form-field>
+
+          <mat-form-field appearance="legacy">
+            <mat-label>Date of application</mat-label>
+            <input matInput [formControl]="date" disabled />
+
+
+          </mat-form-field>
+
+
+        </div>
+
+        <div class="formElement">
+          <mat-form-field appearance='legacy'>
+            <mat-label>Date of birth</mat-label>
+            <input matInput type="date" id="date" formControlName="password" class="formControl" required />
+          </mat-form-field>
+          <mat-form-field appearance='legacy'>
+            <mat-label>Place of birth</mat-label>
+            <input matInput type="tel" id="contact" formControlName="contact" class="formControl" required />
+          </mat-form-field>
+          <mat-form-field appearance='legacy'>
+            <mat-label>Mother tongue</mat-label>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+        </div>
+
+        <div class="formElement">
+
+
+          <mat-radio-group>
+            <mat-label>Gender:-</mat-label>
+            <mat-radio-button value="1">Male </mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+            <mat-radio-button value="3">Other</mat-radio-button>
+          </mat-radio-group>
+
+        </div>
+
+        <div class="formElement">
+          <mat-form-field appearance='legacy'>
+            <mat-label>Father's full name</mat-label>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+          <mat-form-field appearance='legacy'>
+            <mat-label>Father's contact number</mat-label>
+            <input matInput type="tel" id="contact" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+        </div>
+
+        <div class="formElement">
+          <mat-form-field appearance='legacy'>
+            <mat-label>Mother's full name</mat-label>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+          <mat-form-field appearance='legacy'>
+            <mat-label>Mother's contact number</mat-label>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+        </div>
+
+        <div class="formElement">
+          <mat-form-field appearance='legacy'>
+            <mat-label>Guardian's full name</mat-label>
+            <mat-hint align="start"><strong>Fill these only if parent details are not applicable</strong> </mat-hint>
+            <input matInput type="text" id="username" formControlName="username" class="formControl"
+              autocomplete="none" />
+          </mat-form-field>
+          <mat-form-field appearance='legacy'>
+            <mat-label>Guardian's contact number</mat-label>
+            <mat-hint align="start"><strong>Fill these only if parent details are not applicable</strong> </mat-hint>
+            <input matInput type="tel" id="contact" formControlName="username" class="formControl"
+              autocomplete="none" />
+          </mat-form-field>
+        </div>
+
+
+
+
+        <div class="formElement">
+          <!-- <p>{{today | date:'yyyy'}} </p> -->
+        </div>
+
+        <div class="formElement">
+
+        </div>
+
+        <div class="formElement">
+          <mat-form-field appearance="outline">
+            <mat-label>Nationality</mat-label>
+            <mat-select required autofocus>
+              <mat-option *ngFor="let nat of nats" [value]="nat.value">
+                {{nat.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Religion</mat-label>
+            <mat-select required autofocus>
+              <mat-option *ngFor="let religion of religions" [value]="religion.value">
+                {{religion.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Group Category</mat-label>
+            <mat-select required autofocus>
+              <mat-option *ngFor="let cat of cats" [value]="cat.value">
+                {{cat.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance='outline'>
+            <mat-label>Caste</mat-label>
+            <mat-hint align="start"><strong>If general category then write N/A</strong> </mat-hint>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+        </div>
+        <hr />
+
+        <h3>School Details</h3>
+        <div class="formElement">
+          <mat-form-field appearance='legacy'>
+            <mat-label>Exam Registration Number</mat-label>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+          <mat-form-field appearance='legacy'>
+            <mat-label>Board</mat-label>
+            <input matInput type="tel" id="contact" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+          <mat-form-field appearance='legacy'>
+            <mat-label>School Name</mat-label>
+            <input matInput type="tel" id="contact" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+          <mat-form-field appearance='legacy'>
+            <mat-label>School Address</mat-label>
+            <input matInput type="tel" id="contact" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+        </div>
+
+        <div class="formElement">
+          <mat-form-field appearance='outline'>
+            <mat-label>Total Marks</mat-label>
+            <mat-hint align="start"><strong>Maximum marks of all subjects</strong> </mat-hint>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+          <mat-form-field appearance='outline'>
+            <mat-label>Marks Obtained</mat-label>
+            <mat-hint align="start"><strong>Sum of marks obtained in each subject</strong> </mat-hint>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+          <mat-form-field appearance='outline'>
+            <mat-label>Percentage</mat-label>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+          <mat-form-field appearance='outline'>
+            <mat-label>Remarks</mat-label>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+
+        </div>
+        <div class="formElement">
+          <mat-form-field appearance='legacy'>
+            <mat-label>Basis of Admission</mat-label>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+          <mat-form-field appearance='legacy'>
+            <mat-label>Admission Approval status</mat-label>
+            <input matInput type="text" id="username" formControlName="username" class="formControl" required
+              autocomplete="none" />
+          </mat-form-field>
+        </div>
+
+
+
+        <div class="formElement">
+          <button mat-raised-button color='primary' type="submit" class="formControl">
+            submit
+          </button>
+        </div>
+
+
+
+
+      </div>
+
+
+    </form>
+  </div>
+</body>
+
+</html>

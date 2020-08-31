@@ -1,0 +1,17 @@
+mat-card {
+  width: 30%;
+  margin: auto;
+}
+
+.formContainer {
+  width: 100%;
+  padding: 20px;
+}
+
+input {
+  width: 100%;
+}
+
+p {
+  font-size: small;
+}

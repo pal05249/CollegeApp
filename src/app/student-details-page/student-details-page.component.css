@@ -1,0 +1,44 @@
+.formContainer {
+  width: 100%;
+
+
+}
+
+
+
+h1 {
+  padding: 20px;
+  background-color: darkmagenta;
+  color: white;
+  margin: 0px;
+
+}
+
+.formElement {
+  margin: 5px;
+  padding: 5px;
+}
+
+form {
+  margin: 20px;
+}
+
+mat-form-field {
+  width: 20%;
+  margin: 0px 10px;
+}
+
+p {
+
+
+  font-size: medium;
+}
+
+mat-radio-button {
+  padding: 0px 10px 5px 10px;
+  size: small;
+}
+
+mat-radio-group {
+  margin: 15px 15px 15px 12px;
+}

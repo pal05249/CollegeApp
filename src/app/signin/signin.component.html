@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Back2School</title>
+</head>
+
+<body>
+  <div class="form">
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+
+
+      <mat-card>
+        <div class="formContainer">
+          <mat-card-title>Online Admission </mat-card-title>
+          <mat-card-title class="logintitle">Applicant login</mat-card-title>
+
+          <div class="formElement">
+            <mat-form-field appearance='legacy'>
+              <input matInput type="email" type="tel" id="email" formControlName="email" class="formControl"
+                placeholder="Email/Mobile number " required autofocus /></mat-form-field>
+          </div>
+          <div class="formElement">
+            <mat-form-field appearance='legacy'>
+              <input matInput type="password" id="password" formControlName="password" class="formControl"
+                placeholder="Password" required /></mat-form-field>
+          </div>
+
+
+          <div class="formElement">
+            <button mat-raised-button color='primary' type="submit" class="formControl">
+              Signin
+            </button>
+            <p>Are you a new user? <a routerLink="/api/registration/NewUser">Register Here</a></p>
+            <p>Forgot password?<a routerLink="/api/registration/NewUser"> Click Here</a>
+            </p>
+          </div>
+
+        </div>
+
+      </mat-card>
+
+    </form>
+  </div>
+</body>
+
+</html>

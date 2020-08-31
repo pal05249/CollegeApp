@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Back2School</title>
+</head>
+
+<body>
+  <div class="form">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+
+      <mat-card>
+        <div class="formContainer">
+          <mat-card-title>Registration</mat-card-title>
+          <div class="formElement">
+            <mat-form-field appearance="legacy ">
+              <mat-label>User Type</mat-label>
+              <mat-select required autofocus>
+                <mat-option *ngFor="let user of users" [value]="user.value">
+                  {{user.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="formElement">
+            <mat-form-field appearance='legacy'>
+              <input matInput type="text" id="username" formControlName="username" class="formControl"
+                placeholder="Username" required autocomplete="none" />
+            </mat-form-field>
+          </div>
+          <div class="formElement">
+            <mat-form-field appearance='legacy'>
+              <input matInput type="password" id="password" formControlName="password" class="formControl"
+                placeholder="Password" required /></mat-form-field>
+          </div>
+          <div class="formElement">
+            <mat-form-field appearance='legacy'>
+              <input matInput type="email" id="email" formControlName="email" class="formControl" placeholder="Email"
+                required /></mat-form-field>
+          </div>
+          <div class="formElement">
+            <mat-form-field appearance='legacy'>
+              <span matPrefix>+91 &nbsp;</span>
+              <input matInput type="tel" id="contact" formControlName="contact" class="formControl"
+                placeholder="Contact" required /></mat-form-field>
+          </div>
+          <div class="formElement">
+            <button mat-raised-button color='primary' type="submit" class="formControl">
+              submit
+            </button>
+
+
+          </div>
+
+          <div class="formElement">
+            <p class="formControl signin">Already have an account?<a routerLink="/api/login">Signin</a></p>
+
+          </div>
+
+
+        </div>
+      </mat-card>
+
+    </form>
+  </div>
+</body>
+
+</html>
