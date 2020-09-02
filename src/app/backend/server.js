@@ -7,8 +7,9 @@ const cors = require('cors')
 app.use(bodyParser.urlencoded({
   extended: true
 }))
+app.use(bodyParser.json())
 
-app.use(express.static('public'))
+// app.use(express.static('public'))
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
@@ -16,28 +17,17 @@ const pool = mysql.createPool({
   database: 'test',
 })
 
-app.all('/api/registration/NewUser', function (req, res, next) {
+app.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,PATCH,OPTIONS")
   next();
 })
 
-// app.get('/', function (req, res) {
-//   res.sendFile(__dirname + '/signup.html')
-// })
-
-// app.get('/signin', function (req, res) {
-//   res.sendFile(__dirname + '/signin.html')
-// })
-
-// app.get('/studentDetails', function (req, res) {
-//   res.sendFile(__dirname + '/studentDetails.html')
-// })
 
 app.post('/api/registration/NewUser', function (req, res) {
 
-  const name = req.body.username
+  const username = req.body.username
   const pwd = req.body.password
   const email = req.body.email
   const contact = req.body.contact
@@ -46,15 +36,15 @@ app.post('/api/registration/NewUser', function (req, res) {
     if (err) throw err
     console.log('Connected successfully to the db test!')
 
-    var mysql =
+    var sql =
       'INSERT INTO userdata(username,password,email,contact) VALUES(?,?,?,?)'
-    connection.query(mysql, [name, pwd, email, contact], function (err, data) {
+    connection.query(sql, [username, pwd, email, contact], function (err, data) {
       if (err) {
         console.log(err)
       } else {
         console.log('successfully inserted into db')
         connection.end()
-        res.redirect('/signin')
+        res.redirect('/api/login')
       }
     })
   })

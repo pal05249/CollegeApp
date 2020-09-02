@@ -1,5 +1,5 @@
-export class User {
-  _id: string
+export interface User {
+
 
   username: string
 
@@ -9,5 +9,4 @@ export class User {
 
   contact: number
 
-  updated_at: Date
 }

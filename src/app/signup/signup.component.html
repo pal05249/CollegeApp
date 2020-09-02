@@ -15,16 +15,24 @@
       <mat-card>
         <div class="formContainer">
           <mat-card-title>Registration</mat-card-title>
-          <div class="formElement">
+          <!-- <div class="formElement">
             <mat-form-field appearance="legacy ">
-              <mat-label>User Type</mat-label>
+              <mat-label>Register as</mat-label>
               <mat-select required autofocus>
-                <mat-option *ngFor="let user of users" [value]="user.value">
+                <mat-option *ngFor="let user of userTypes" [value]="user.value">
                   {{user.viewValue}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
-          </div>
+            <mat-form-field appearance="legacy ">
+              <mat-label>Register type</mat-label>
+              <mat-select required autofocus>
+                <mat-option *ngFor="let regMethod of regMethods" [value]="regMethod.value">
+                  {{regMethod.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div> -->
           <div class="formElement">
             <mat-form-field appearance='legacy'>
               <input matInput type="text" id="username" formControlName="username" class="formControl"

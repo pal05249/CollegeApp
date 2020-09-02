@@ -7,7 +7,6 @@ import {
   HttpErrorResponse,
 } from '@angular/common/http'
 
-import { catchError, tap, map } from 'rxjs/operators'
 import { User } from './user.model'
 
 const httpOptions = {
@@ -24,9 +23,10 @@ export class ApiConService {
   constructor(private http: HttpClient) {
 
   }
-  addUser(user: User) {
+  addUser(user: User): Observable<User> {
     return this.http
-      .post<User>(apiUrl, user).subscribe(Response => console.log(Response));
+      .post<User>(apiUrl, user, httpOptions)
 
   }
+
 }

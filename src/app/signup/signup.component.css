@@ -15,3 +15,8 @@ input {
 p {
   font-size: small;
 }
+
+.formElement mat-select {
+  margin-right: 25px;
+  padding-right: 25px;
+}
