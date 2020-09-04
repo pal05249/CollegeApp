@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 app.use(bodyParser.json())
+app.use(cors());
 
 // app.use(express.static('public'))
 const pool = mysql.createPool({
@@ -17,8 +18,8 @@ const pool = mysql.createPool({
   database: 'test',
 })
 
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+app.use('/', function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
   res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,PATCH,OPTIONS")
   next();
@@ -79,6 +80,12 @@ app.post('/api/registration/NewUser', function (req, res) {
 //     })
 //   })
 // })
+
+app.post(('/api/user /forgot-pasword'), function (req, res)
+
+  {
+
+  })
 
 app.listen(3000, function (err) {
   if (err) throw err

@@ -13,7 +13,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 }
 
-const apiUrl = 'http://localhost:3000/api/registration/NewUser'
+const apiUrl = 'http://localhost:3000/api'
 
 @Injectable({
   providedIn: 'root',
@@ -25,8 +25,12 @@ export class ApiConService {
   }
   addUser(user: User): Observable<User> {
     return this.http
-      .post<User>(apiUrl, user, httpOptions)
+      .post<User>(apiUrl + "/User/registration", user, httpOptions)
 
+  }
+
+  getUser(): Observable<User> {
+    return this.http.get<User>(apiUrl + "/User/login")
   }
 
 }

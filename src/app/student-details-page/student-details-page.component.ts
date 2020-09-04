@@ -8,6 +8,7 @@ import { MatYearView } from '@angular/material/datepicker';
 
 interface Array {
   value: string;
+
   viewValue: string;
 }
 
@@ -27,9 +28,9 @@ export class StudentDetailsPageComponent implements OnInit {
   Formbuilder: any
   constructor(private service: ApiConService, private formBuilder: FormBuilder) { }
   signupForm: FormGroup
-  userType: ''
-  username: ''
-  password: ''
+
+  studentName: ''
+  combination: ''
   email: ''
   contact: ''
   today: number = Date.now();
@@ -61,11 +62,28 @@ export class StudentDetailsPageComponent implements OnInit {
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
-      'userType': ['', Validators.required],
-      'username': ['', Validators.required],
-      'email': ['', Validators.required],
-      'password': ['', Validators.required],
-      'contact': ['', Validators.required]
+      'studentName': ['', Validators.required],
+      'combination': ['', Validators.required],
+      'dob': ['', Validators.required],
+      'pob': ['', Validators.required],
+      'motherTongue': ['', Validators.required],
+      'fathersName': ['', Validators.required],
+      'fathersContact': ['', Validators.required],
+      'mothersName': ['', Validators.required],
+      'mothersContact': ['', Validators.required],
+      'guardiansName': ['', Validators.required],
+      'guardiansContact': ['', Validators.required],
+      'caste': ['', Validators.required],
+      'regNumber': ['', Validators.required],
+      'board': ['', Validators.required],
+      'schoolName': ['', Validators.required],
+      'schoolAddress': ['', Validators.required],
+      'totalMarks': ['', Validators.required],
+      'marksObtained': ['', Validators.required],
+      'percentage': ['', Validators.required],
+      'remarks': ['', Validators.required],
+      'basisOfAdmission': ['', Validators.required],
+      'admissionStatus': ['', Validators.required]
     });
 
   }

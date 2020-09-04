@@ -6,7 +6,7 @@ import { StudentDetailsPageComponent } from './student-details-page/student-deta
 const routes: Routes = [
 
   {
-    path: 'api/registration/NewUser',
+    path: 'api/User/registration',
     component: SignupComponent,
 
   },
@@ -16,7 +16,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'api/login',
+    path: 'api/User/login',
     component: SigninComponent,
 
   },

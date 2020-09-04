@@ -11,6 +11,7 @@
 
   <h1>Registration Form</h1>
   <div class="form">
+
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
 
 
@@ -36,9 +37,7 @@
 
           <mat-form-field appearance="legacy">
             <mat-label>Date of application</mat-label>
-            <input matInput [formControl]="date" disabled />
-
-
+            <input matInput [formControl]="date" />
           </mat-form-field>
 
 
